@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A rainy day in Dhaka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>A rainy day in Dhaka</h1>
+            <h2>Genrative Artificial Intelligence web app </h2>
+            <h3>© Idea of Computer Engineer Md. Razon - Software Delivery</h3>
+        </header>
+
+        <div id="controls" role="form" aria-labelledby="form-heading">
+            <p id="form-heading">Upload an image of a person to place them in the scene.</p>
+            <div class="file-upload-wrapper">
+                <input type="file" id="image-upload" accept="image/*" aria-label="Upload an image of a person">
+                <label for="image-upload" id="image-upload-label">Choose a File</label>
+            </div>
+            <button id="generate-button" class="btn btn-primary">Generate</button>
+        </div>
+
+        <div id="loader" class="hidden" role="status" aria-live="polite">
+            <div class="spinner"></div>
+            <span>Generating...</span>
+        </div>
+
+        <div id="image-gallery"></div>
+
+        <div id="post-generate-controls" class="hidden">
+            <button id="download-button" class="btn btn-secondary">
+                <span class="icon download-icon"></span>
+                <span>Download Image</span>
+            </button>
+            <button id="generate-again-button" class="btn btn-secondary">
+                <span class="icon generate-again-icon"></span>
+                <span>Generate Again</span>
+            </button>
+        </div>
+    </main>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
